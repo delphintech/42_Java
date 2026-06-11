@@ -7,8 +7,10 @@ public class AircraftFactory {
 	private static int	nextId = 0;
 
 	// ********** Methods ********** //
+	private AircraftFactory() {}
+
 	public static Flyable	newAircraft(String p_type, String p_name, Coordinates p_coordinates) {
-		Flyable		newAircraft = null;
+		Flyable		newAircraft;
 
 		switch(p_type.toLowerCase())
 		{
@@ -22,8 +24,7 @@ public class AircraftFactory {
 				newAircraft = new JetPlane(nextId, p_name, p_coordinates);
 				break;
 			default:
-				// TODO: Raise error
-				// TODO: "any" case
+				return null;
 		}
 		nextId++;
 

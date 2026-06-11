@@ -13,5 +13,3 @@ public class WeatherTower extends Tower {
 		// TODO
 	}
 }
-
-// Visibility: - private, # protected, + public, ~ package (default)
