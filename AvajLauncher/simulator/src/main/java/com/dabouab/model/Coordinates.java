@@ -11,6 +11,10 @@ public class Coordinates {
 		this.longitude = p_longitude;
 		this.latitude = p_latitude;
 		this.height = p_height;
+		/* TODO: raise exception if not correct conditions
+			Coordinates are positive numbers.
+			The height is in the 0-100 range.
+		*/
 	}
 
 	public int	getLongitude() {

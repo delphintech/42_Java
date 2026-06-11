@@ -5,18 +5,20 @@ import com.dabouab.model.Coordinates;
 public class WeatherProvider {
 	// ********** Field ********** //
 	private static WeatherProvider	instance;
-	private static String[]			weather;
+	private static final String[]	weather = {"RAIN", "FOG", "SUN", "SNOW"};
 
 	// ********** Methods ********** //
-	private	WeatherProvider() {
-		// TODO ?
-	}
+	private	WeatherProvider() {}
 
-	public String	getCurrentWeather(Coordinates p_coordinates) {
+	public static WeatherProvider	getInstance() {
 		if (instance == null) {
 			instance = new WeatherProvider();
 		}
-		// TODO: return current weather
+		return instance;
+	}
+
+	public String	getCurrentWeather(Coordinates p_coordinates) {
+		// TODO: implement algorithm to return a weather according to the coordinates 
 	}
 
 }
