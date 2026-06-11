@@ -1,10 +1,10 @@
 package com.dabouab.model.flyables;
 
-import com.dabouab.model.flyables.Aircraft;
+import com.dabouab.model.Coordinates;
 
 public class Baloon extends Aircraft {
 	// ********** Methods ********** //
-	public Baloon(long p_id, String p_name, Coordinate p_coordinate) {
+	public Baloon(long p_id, String p_name, Coordinates p_coordinate) {
 		super(p_id, p_name, p_coordinate);
 	}
 

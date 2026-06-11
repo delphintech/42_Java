@@ -8,7 +8,7 @@ public class AircraftFactory {
 
 	// ********** Methods ********** //
 	public static Flyable	newAircraft(String p_type, String p_name, Coordinates p_coordinates) {
-		Flyable		newAircraft;
+		Flyable		newAircraft = null;
 
 		switch(p_type.toLowerCase())
 		{
@@ -25,7 +25,7 @@ public class AircraftFactory {
 				// TODO: Raise error
 				// TODO: "any" case
 		}
-		nextId++
+		nextId++;
 
 		return newAircraft;
 	}

@@ -1,6 +1,6 @@
 package com.dabouab.model.towers;
 
-import com.dabouab.model.tower.Tower;
+
 import com.dabouab.model.Coordinates;
 
 public class WeatherTower extends Tower {

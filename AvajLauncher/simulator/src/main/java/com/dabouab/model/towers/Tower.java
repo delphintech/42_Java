@@ -1,7 +1,7 @@
 package com.dabouab.model.towers;
 
 import java.util.*;
-import com.dabouab.model.flyables.Flyable
+import com.dabouab.model.flyables.Flyable;
 
 public class Tower {
 	// ********** Field ********** //
@@ -12,7 +12,7 @@ public class Tower {
 		if (p_flyable == null) return;
 
 		if (!this.observers.contains(p_flyable)) {
-			this.obervers.add(p_flyable);
+			this.observers.add(p_flyable);
 		}
 	}
 
