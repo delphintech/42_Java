@@ -5,12 +5,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import com.dabouab.exception.*;
+import com.dabouab.model.RedirectOutput;
 import com.dabouab.model.*;
 import com.dabouab.model.flyables.*;
 
 public class Simulator {
 	public static void main(String[] args) {
 		int				rounds;
+		RedirectOutput	redir;
 		List<Flyable>	flyables = new ArrayList<Flyable>();
 
 
@@ -21,18 +23,24 @@ public class Simulator {
 
 		try (Parser parser = new Parser(args[0])) {
 			rounds = parser.parseRounds();
-			flyables = parser.parseFlyables();
+			// redir = new RedirectOutput("simulation.tx");
+			parser.parseFlyables(flyables);
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			System.exit(1);
 		}
 
-		/* TODO
-			Parse senario.txt
-			Creates a Weather Tower
-			Creates each Aircraft and register the WeatherTower (Flyable.registertower())
-			Register all AirCraft in WeatherTower
-			Runs loop with x weather changes
-		 */
+		while (rounds < 0) {
+			// TODO: run the smulation
+			rounds -= 1;
+		}
+
+		// try {
+		// 	redir.close()
+		// } catch (IOException e) {
+		// 	System.err.println(e.getMessage());
+		// 	System.exit(1);
+		// }
+		return (0);
 	}
 }

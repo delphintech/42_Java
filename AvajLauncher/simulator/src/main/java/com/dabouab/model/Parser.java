@@ -40,10 +40,9 @@ public class Parser implements AutoCloseable {
         }
     }
 
-    public List<Flyable> parseFlyables() throws IOException, ConfigurationException {
+    public void parseFlyables(List<Flyable> flyables) throws IOException, ConfigurationException {
         AircraftFactory factory;
         Coordinates coord;
-        List<Flyable> flyables = new ArrayList<>();
         String line;
         String[] conf;
         int lon;
