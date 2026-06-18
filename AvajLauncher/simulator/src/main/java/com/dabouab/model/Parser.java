@@ -2,8 +2,7 @@ package com.dabouab.model;
 
 import com.dabouab.model.flyables.Flyable;
 
-import com.dabouab.exception.ConfigurationException;
-import com.dabouab.exception.CoordinatesException;
+import com.dabouab.exception.*;
 
 import java.io.File;
 import java.io.FileReader;
@@ -68,10 +67,12 @@ public class Parser implements AutoCloseable {
                 throw new ConfigurationException("Coordinates must be positive and height in 0-100 range", e);
             }
 
-            flyables.add(factory.newAircraft(conf[0], conf[1], coord));
+            try {
+                flyables.add(factory.newAircraft(conf[0], conf[1], coord));
+            } catch (AircraftException e) {
+                throw new ConfigurationException("Could not create the Aircraft with : " + line, e);
+            }
         }
-
-        return flyables;
     }
 
     @Override

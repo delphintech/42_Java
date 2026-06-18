@@ -5,14 +5,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import com.dabouab.exception.*;
-import com.dabouab.model.RedirectOutput;
 import com.dabouab.model.*;
 import com.dabouab.model.flyables.*;
 import com.dabouab.model.towers.WeatherTower;
 
 public class Simulator {
-	public static void main(String[] args) {
-		int				rounds;
+	public static int main(String[] args) {
+		int				rounds = 0;
 		RedirectOutput	redir;
 		WeatherTower	tower;
 		List<Flyable>	flyables = new ArrayList<Flyable>();
@@ -33,7 +32,7 @@ public class Simulator {
 		}
 
 		tower = new WeatherTower();
-		for (Flyable: f : flyables) {
+		for (Flyable f : flyables) {
 			f.registerTower(tower);
 		}
 

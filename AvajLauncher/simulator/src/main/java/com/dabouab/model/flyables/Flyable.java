@@ -7,9 +7,9 @@ public abstract class Flyable {
 	protected	 WeatherTower weatherTower;
 
 	// ********** Methods ********** //
-	abstract public void	updateConditions();
-	abstract private String	log(String condition);
-	abstract private void	updateCoordinates(String weather);
+	abstract public void		updateConditions();
+	abstract protected String	log(String condition);
+	abstract protected void		updateCoordinates(String weather);
 
 	public void registerTower(WeatherTower p_tower) {
 		if (p_tower == null) return;

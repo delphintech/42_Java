@@ -2,16 +2,17 @@ package com.dabouab.model.flyables;
 
 import com.dabouab.util.Color;
 import com.dabouab.model.Coordinates;
+import com.dabouab.exception.AircraftException;
 
 public class Balloon extends Aircraft {
 	// ********** Methods ********** //
-	public Balloon(long p_id, String p_name, Coordinates p_coordinate) {
+	public Balloon(long p_id, String p_name, Coordinates p_coordinate) throws AircraftException {
 		super(p_id, p_name, p_coordinate);
 	}
 
 	@Override
-	private String	log(String condition) {
-		String msg;
+	protected String	log(String condition) {
+		String	msg;
 
 		switch(condition) {
 			case "SUN":
@@ -29,11 +30,13 @@ public class Balloon extends Aircraft {
 			default:
 				msg = "";
 		}
-		return Color.PURPLE + super(condition) + msg + Color.RESET; 
+		return Color.PURPLE + super.log(condition) + msg + Color.RESET; 
 	}
 
 	@Override
-	private void	updateCoordinates(String weather) {
+	protected void	updateCoordinates(String weather) {
+		String	msg;
+
 		switch(weather) {
 			case "SUN":
 				this.coordinates.moveCoordinates(2, 0, 4);
@@ -51,11 +54,6 @@ public class Balloon extends Aircraft {
 	}
 
 	public String	toString() {
-		return "🎈 " + super();
+		return "🎈 " + super.toString();
 	}
 }
-
-// ◦ SUN - Longitude increases with 2, Height increases with 4
-// ◦ RAIN - Height decreases with 5
-// ◦ FOG - Height decreases with 3
-// ◦ SNOW - Height decreases with 15

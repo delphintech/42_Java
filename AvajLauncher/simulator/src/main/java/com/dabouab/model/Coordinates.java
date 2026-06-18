@@ -27,7 +27,7 @@ public class Coordinates {
 		}
 	}
 
-	public int	moveCoordinates(int lon_offset, int lat_offset, int hei_offset) {
+	public void	moveCoordinates(int lon_offset, int lat_offset, int hei_offset) {
 		this.longitude += lon_offset;
 		this.latitude += lat_offset;
 		this.height += hei_offset;
@@ -36,11 +36,11 @@ public class Coordinates {
 		if (this.height < 0) this.height = 0;
 		if (this.height > 100) this.height = 100;
 
-		if (this.lon < 0) this.lon = 0;
-		if (this.lon > 1000) this.lon = 1000;
+		if (this.longitude < 0) this.longitude = 0;
+		if (this.longitude > 1000) this.longitude = 1000;
 		
-		if (this.lat < 0) this.lat = 0;
-		if (this.lat > 1000) this.lat = 1000;
+		if (this.latitude < 0) this.latitude = 0;
+		if (this.latitude > 1000) this.latitude = 1000;
 	}
 
 	public int	getLongitude() {

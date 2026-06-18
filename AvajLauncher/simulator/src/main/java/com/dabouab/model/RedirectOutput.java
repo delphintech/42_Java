@@ -1,7 +1,9 @@
-package com.dabouab.util;
+package com.dabouab.model;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.PrintStream;
+import java.io.IOException;
 
 public class RedirectOutput {
 	// ********** Field ********** //
@@ -14,16 +16,18 @@ public class RedirectOutput {
 		try {
 			file = new File(filePath);
 			// Create file or reset it
-			if (!file.createNewFile();) {
-				FileChannel.open(file, StandardOpenOption.WRITE).truncate(0).close();
+			if (!file.createNewFile()) {
+				FileWriter writer = new FileWriter(file, false);
+				writer.write("");
+				writer.close();
 			}
 			this.ps = new PrintStream(filePath);
 		} catch (IOException e) {
-			trow new RuntimeException("Unable to create the report.", e);
+			throw new RuntimeException("Unable to create the report.", e);
 		}
 	}
 
-	public	stop() {
+	public void	stop() {
 		if (this.ps != null) {
 			this.ps.close();
 		}

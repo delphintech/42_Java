@@ -1,6 +1,7 @@
 package com.dabouab.model;
 
 import com.dabouab.model.flyables.*;
+import com.dabouab.exception.AircraftException;
 
 public class AircraftFactory {
 	// ********** Field ********** //
@@ -17,7 +18,7 @@ public class AircraftFactory {
 		return instance;
 	}
 
-	public Flyable	newAircraft(String p_type, String p_name, Coordinates p_coordinates) {
+	public Flyable	newAircraft(String p_type, String p_name, Coordinates p_coordinates) throws AircraftException{
 		Flyable		newAircraft;
 
 		switch(p_type.toLowerCase())
