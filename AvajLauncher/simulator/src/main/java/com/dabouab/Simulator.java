@@ -8,11 +8,13 @@ import com.dabouab.exception.*;
 import com.dabouab.model.RedirectOutput;
 import com.dabouab.model.*;
 import com.dabouab.model.flyables.*;
+import com.dabouab.model.towers.WeatherTower;
 
 public class Simulator {
 	public static void main(String[] args) {
 		int				rounds;
 		RedirectOutput	redir;
+		WeatherTower	tower;
 		List<Flyable>	flyables = new ArrayList<Flyable>();
 
 
@@ -30,12 +32,13 @@ public class Simulator {
 			System.exit(1);
 		}
 
+		tower = new WeatherTower();
 		for (Flyable: f : flyables) {
-			f.registerTower();
+			f.registerTower(tower);
 		}
 
 		while (rounds < 0) {
-			// TODO: run the smulation
+			tower.changeWeather();
 			rounds -= 1;
 		}
 

@@ -18,7 +18,10 @@ public class WeatherProvider {
 	}
 
 	public String	getCurrentWeather(Coordinates p_coordinates) {
-		// TODO: implement algorithm to return a weather according to the coordinates 
-	}
+		int		coef;
 
+		coef = p_coordinates.getLongitude() + p_coordinates.getLatitude() + p_coordinates.getHeight();
+		coef = coef % 4;
+		return weather[coef];
+	}
 }

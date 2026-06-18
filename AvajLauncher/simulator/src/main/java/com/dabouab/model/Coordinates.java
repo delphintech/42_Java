@@ -51,7 +51,7 @@ public class Coordinates {
 		return this.latitude;
 	}
 
-	public int	getHeigut() {
+	public int	getHeight() {
 		return this.height;
 	}
 }
