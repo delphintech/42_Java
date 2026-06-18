@@ -14,7 +14,7 @@ public class Tower {
 
 		if (!this.observers.contains(p_flyable)) {
 			this.observers.add(p_flyable);
-			String message = "Tower says: %s registered to weather tower.";
+			String message = "📡 Tower says: %s registered to weather tower.";
 			System.out.println(Color.GREEN + String.format(message, p_flyable) + Color.RESET);
 		}
 	}
@@ -24,7 +24,7 @@ public class Tower {
 		
 		if (this.observers.contains(p_flyable)) {
 			this.observers.remove(p_flyable);
-			String message = "Tower says: %s unregistered from weather tower.";
+			String message = "📡 Tower says: %s unregistered from weather tower.";
 			System.out.println(Color.RED + String.format(message, p_flyable) + Color.RESET);
 		}
 	}

@@ -1,5 +1,8 @@
 package com.dabouab.model.flyables;
 
+import com.dabouab.exception.*;
+
+import com.dabouab.util.color;
 import	com.dabouab.model.Coordinates;
 import com.dabouab.model.WeatherProvider;
 
@@ -12,26 +15,35 @@ public class Aircraft extends Flyable {
 	// ********** Methods ********** //
 	@Override
 	public void updateConditions() {
-		/* TODO
-			Get weather from tower
-			Log message
-			Change coordinates
-			If an aircraft needs to pass the upper limit height it remains at 100.
-			If an aircraft reaches height 0 or needs to go below it, the aircraft lands, unregisters
-				from the weather tower and logs a message.
-		 */
+		String weather;
+
+		weather = this.weatherTower.getWeather(this.coordinates);
+		this.log(weather);
+		this.updateCoordinates(weather);
+		if (coordinates.height <= 0) {
+			System.out.PrintLn(this.log("landing"));
+			this.weatherTower.unregisters(this);
+		}
 	}
 
-	public Coordinates	getCoordinates() {
-		return this.coordinates;
+	@Override
+	private String	log(String condition) {
+		if (condition == "LAND") {
+			return Color.YELLOW_BG + this.toString() + ": landing. 🛬"
+		}
+		return this.toString() + ": ";
 	}
 
-	protected Aircraft(long p_id, String p_name, Coordinates p_coordinate) {
+	@Override
+	private void	updateCoordinates(String Weather) {}
+
+	protected Aircraft(long p_id, String p_name, Coordinates p_coordinate) throws AircraftException {
+		if (p_name. length < 2 | p_name.length > 20) {
+			throw new AircraftException("Aircraft name must be betwen 2 and 20 characters.");
+		}
 		this.id = p_id;
 		this.name = p_name;
 		this.coordinates = p_coordinate;
-		this.updateConditions();
-		// FIXME: Do you need super to call FLyable and register to a new tower ? 
 	}
 
 	public String	toString() {

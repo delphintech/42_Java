@@ -45,9 +45,7 @@ public class Parser implements AutoCloseable {
         Coordinates coord;
         String line;
         String[] conf;
-        int lon;
-        int lat;
-        int hei;
+        int lon, lat, hei;
 
         factory = AircraftFactory.getInstance();
         while ((line = this.br.readLine()) != null) {

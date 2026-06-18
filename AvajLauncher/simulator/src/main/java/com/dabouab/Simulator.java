@@ -30,6 +30,10 @@ public class Simulator {
 			System.exit(1);
 		}
 
+		for (Flyable: f : flyables) {
+			f.registerTower();
+		}
+
 		while (rounds < 0) {
 			// TODO: run the smulation
 			rounds -= 1;

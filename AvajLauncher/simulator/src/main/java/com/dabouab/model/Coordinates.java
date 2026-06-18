@@ -14,15 +14,33 @@ public class Coordinates {
 		this.latitude = p_latitude;
 		this.height = p_height;
 
+		if (p_longitude < 0 || p_longitude > 1000) {
+			throw new CoordinatesException("Longitude must be between 0 and 1000");
+		}
+
+		if (p_latitude < 0 || p_latitude > 1000) {
+			throw new CoordinatesException("Latitude must be between 0 and 1000");
+		}
+
 		if (p_height <= 0 || p_height > 100) {
 			throw new CoordinatesException("Height must be between 1 and 100");
 		}
+	}
 
-		/* TODO
-			raise exception if not correct conditions
-			Coordinates are positive numbers.
-			The height is in the 0-100 range.
-		*/
+	public int	moveCoordinates(int lon_offset, int lat_offset, int hei_offset) {
+		this.longitude += lon_offset;
+		this.latitude += lat_offset;
+		this.height += hei_offset;
+
+		// Coordinates change limitation
+		if (this.height < 0) this.height = 0;
+		if (this.height > 100) this.height = 100;
+
+		if (this.lon < 0) this.lon = 0;
+		if (this.lon > 1000) this.lon = 1000;
+		
+		if (this.lat < 0) this.lat = 0;
+		if (this.lat > 1000) this.lat = 1000;
 	}
 
 	public int	getLongitude() {
