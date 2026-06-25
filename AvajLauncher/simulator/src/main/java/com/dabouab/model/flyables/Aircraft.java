@@ -47,6 +47,6 @@ public class Aircraft extends Flyable {
 	protected void	updateCoordinates(String Weather) {}
 
 	public String	toString() {
-		return this.getClass() + "#" + this.name + "(" + this.id + ")";
+		return this.getClass().getSimpleName() + "#" + this.name + "(" + this.id + ")";
 	}
 }

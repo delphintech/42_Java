@@ -62,6 +62,7 @@ public class Parser implements AutoCloseable {
             }
 
             try {
+                // System.out.println(lon + ", " + lat + ", " + hei);
                 coord = new Coordinates(lon, lat, hei);
             } catch (CoordinatesException e) {
                 throw new ConfigurationException("Coordinates must be positive and height in 0-100 range", e);

@@ -10,7 +10,7 @@ import com.dabouab.model.flyables.*;
 import com.dabouab.model.towers.WeatherTower;
 
 public class Simulator {
-	public static int main(String[] args) {
+	public static void main(String[] args) {
 		int				rounds = 0;
 		RedirectOutput	redir;
 		WeatherTower	tower;
@@ -36,9 +36,9 @@ public class Simulator {
 			f.registerTower(tower);
 		}
 
-		while (rounds < 0) {
+		while (rounds > 0) {
 			tower.changeWeather();
-			rounds -= 1;
+			rounds--;
 		}
 
 		// try {
@@ -47,6 +47,6 @@ public class Simulator {
 		// 	System.err.println(e.getMessage());
 		// 	System.exit(1);
 		// }
-		return (0);
+		System.exit(0);
 	}
 }
