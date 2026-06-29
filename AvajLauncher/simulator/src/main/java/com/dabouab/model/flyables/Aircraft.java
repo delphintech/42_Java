@@ -27,7 +27,7 @@ public class Aircraft extends Flyable {
 		String weather;
 
 		weather = this.weatherTower.getWeather(this.coordinates);
-		this.log(weather);
+		System.out.println(this.log(weather));
 		this.updateCoordinates(weather);
 		if (coordinates.getHeight() == 0) {
 			System.out.println(this.log("landing"));

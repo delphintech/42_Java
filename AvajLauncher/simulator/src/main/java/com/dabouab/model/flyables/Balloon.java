@@ -22,7 +22,7 @@ public class Balloon extends Aircraft {
 				msg = "I am socking wet ! 🌧️";
 				break;
 			case "FOG":
-				msg = "I can't see shit and can't manoeuvre. Please try to avoid ne I am fragile. 😶‍🌫️";
+				msg = "I can't see shit and can't manoeuvre. Please try to avoid ne I am fragile. 🌫️";
 				break;
 			case "SNOW":
 				msg = "The snow is pilling on my basket. Help ! ❄️";

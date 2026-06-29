@@ -22,7 +22,7 @@ public class Helicopter extends Aircraft {
 				msg = "Time to turn on the windscreen wipers ! 🌧️";
 				break;
 			case "FOG":
-				msg = "Trying to find my way guys. 😶‍🌫️";
+				msg = "Trying to find my way guys. 🌫️";
 				break;
 			case "SNOW":
 				msg = "I'm freezing here ! ❄️";

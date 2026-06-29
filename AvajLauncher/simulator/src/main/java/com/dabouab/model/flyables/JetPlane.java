@@ -23,7 +23,7 @@ public class JetPlane extends Aircraft {
 				msg = "Not a good day for a picnic, right ? 🌧️";
 				break;
 			case "FOG":
-				msg = "Only navigating thanks to my instruments. 😶‍🌫️";
+				msg = "Only navigating thanks to my instruments. 🌫️";
 				break;
 			case "SNOW":
 				msg = "Hope the landing strip won't be to slippery ❄️";
@@ -53,6 +53,6 @@ public class JetPlane extends Aircraft {
 	}
 
 	public String	toString() {
-		return "✈️ " + super.toString();
+		return "✈️  " + super.toString();
 	}
 }
