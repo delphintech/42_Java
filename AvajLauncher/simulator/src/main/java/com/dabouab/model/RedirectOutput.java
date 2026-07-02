@@ -1,35 +1,30 @@
 package com.dabouab.model;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.PrintStream;
 import java.io.IOException;
 
 public class RedirectOutput {
 	// ********** Field ********** //
-	private PrintStream		ps;
+	private final PrintStream	ps;
+	private final PrintStream	out;
 
 	// ********** Methods ********** //
 	public	RedirectOutput(String filePath) throws RuntimeException {
-		File	file;
-
 		try {
-			file = new File(filePath);
-			// Create file or reset it
-			if (!file.createNewFile()) {
-				FileWriter writer = new FileWriter(file, false);
-				writer.write("");
-				writer.close();
-			}
+			this.out = System.out;
 			this.ps = new PrintStream(filePath);
+			System.setOut(this.ps);
 		} catch (IOException e) {
 			throw new RuntimeException("Unable to create the report.", e);
 		}
 	}
 
-	public void	stop() {
+	public void	close() {
 		if (this.ps != null) {
 			this.ps.close();
+		}
+		if (this.out != null) {
+			System.setOut(this.out);
 		}
 	}
 }
