@@ -27,8 +27,8 @@ public class Parser implements AutoCloseable {
     }
 
     public int parseRounds() throws IOException, ConfigurationException {
-        String line = this.br.readLine();
         try {
+            String line = this.br.readLine();
             int rounds = Integer.parseInt(line);
             if (rounds <= 0) {
                 throw new ConfigurationException("Rounds must be positive");

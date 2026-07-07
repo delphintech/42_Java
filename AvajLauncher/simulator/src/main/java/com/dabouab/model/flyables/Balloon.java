@@ -48,7 +48,7 @@ public class Balloon extends Aircraft {
 				this.coordinates.moveCoordinates(0, 0, -3);
 				break;
 			case "SNOW":
-				this.coordinates.moveCoordinates(0, 0, 15);
+				this.coordinates.moveCoordinates(0, 0, -15);
 				break;
 		}
 	}

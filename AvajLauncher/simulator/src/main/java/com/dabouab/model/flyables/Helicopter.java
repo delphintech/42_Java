@@ -46,7 +46,7 @@ public class Helicopter extends Aircraft {
 				this.coordinates.moveCoordinates(1, 0, 0);
 				break;
 			case "SNOW":
-				this.coordinates.moveCoordinates(0, 0, 12);
+				this.coordinates.moveCoordinates(0, 0, -12);
 				break;
 		}
 	}
