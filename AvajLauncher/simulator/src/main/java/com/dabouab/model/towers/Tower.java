@@ -30,7 +30,9 @@ public class Tower {
 	}
 
 	protected void	conditionChanged() {
-		for (Flyable flyable : observers) {
+		List<Flyable> observers_copy = this.observers.copy();
+
+		for (Flyable flyable : observers_copy) {
 			flyable.updateConditions();
 		}
 	}
