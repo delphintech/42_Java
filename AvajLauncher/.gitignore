@@ -1,2 +1,5 @@
 **/**/*.class
-**/**/*.txt
+**/**/sources.txt
+**/**/source.txt
+**/**/simulation.txt
+**/**/subject/
